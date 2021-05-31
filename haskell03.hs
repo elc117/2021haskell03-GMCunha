@@ -38,7 +38,7 @@ trSpaces :: String -> String
 trSpaces l = [if x==' ' then '-' else x | x <- l]
 
 selectSnd :: [(Int,Int)] -> [Int]
-selectSnd t = [snd x | x <- t]
+selectSnd t = [x | (_, x) <- t]
 
 dotProd :: [Int] -> [Int] -> Int
 dotProd l1 l2 = sum ([x*y | (x, y) <- zip l1 l2])
