@@ -23,7 +23,16 @@ sumOdds :: [Int] -> Int
 sumOdds l = sum [x | x <- l, odd x]
 
 sumOdds' :: [Int] -> Int
-sumOdds' l = sum (filter odd l)
+sumOdds' l = sum (filter (\ y -> y `mod` 2 == 1) l)
 
 selectExpr :: [Int] -> [Int]
 selectExpr l = [x | x <- l, x >= 20, x <= 50]
+
+countShorts :: [String] -> Int
+countShorts l = length [x | x <- l, length x < 5]
+
+calcExpr :: [Float] -> [Float]
+calcExpr l = filter (\ y -> y > 10) [x^2/2 | x <- l]
+
+trSpaces :: String -> String
+trSpaces l = [if x==' ' then '-' else x | x <- l]
